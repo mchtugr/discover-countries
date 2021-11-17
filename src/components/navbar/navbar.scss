@@ -7,9 +7,9 @@
   border-bottom: 1px solid #ebebeb;
   //   dark-theme
   &--dark {
-    background-color: $dark-mode-elements;
-    color: $white;
+    border-bottom: 1px solid $dark-mode-elements;
   }
+
   //   logo
   &__logo {
     font-weight: $font-normal;

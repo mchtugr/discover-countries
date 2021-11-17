@@ -1,22 +1,19 @@
 <template>
-  <div id="app">
+  <div id="app" class="app-wrapper" :class="{ 'app-wrapper--dark': isDark }">
     <navbar />
     <router-view />
   </div>
 </template>
 
 <script>
-// import Navbar from './components/Navbar.vue'
+import { mapState } from 'vuex'
 import Navbar from './components/navbar/Navbar.vue'
+
 export default {
   name: 'App',
   components: { Navbar },
+  computed: {
+    ...mapState(['isDark']),
+  },
 }
 </script>
-
-<style lang="scss">
-#app {
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-</style>
