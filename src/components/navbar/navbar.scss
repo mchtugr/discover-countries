@@ -1,0 +1,42 @@
+@import './src/assets/scss/variables';
+
+.navbar {
+  padding: 20px 40px;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #ebebeb;
+  //   dark-theme
+  &--dark {
+    background-color: $dark-mode-elements;
+    color: $white;
+  }
+  //   logo
+  &__logo {
+    font-weight: $font-normal;
+    text-decoration: none;
+    color: inherit;
+  }
+
+  //   theme section
+  &__theme {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+  }
+  // theme text
+  & span {
+    margin-left: 5px;
+    font-weight: $font-normal;
+  }
+}
+
+.sun-icon {
+  fill: $white;
+  width: $homepage-font-size;
+  height: $homepage-font-size;
+}
+
+.moon-icon {
+  //   fill: $dark-mode-elements;
+}
