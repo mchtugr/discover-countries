@@ -1,0 +1,66 @@
+@import './src/assets/scss/variables';
+
+.custom-input {
+  width: 100%;
+  position: relative;
+  box-sizing: border-box;
+
+  &--dark input {
+    background-color: $dark-mode-elements;
+  }
+  &__search-icon {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    bottom: 8px;
+    left: 12px;
+  }
+  &__search-icon--dark svg {
+    stroke: $white;
+  }
+
+  &__close-icon {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+    bottom: 8px;
+    right: -44px;
+  }
+
+  &__close-icon--dark svg {
+    stroke: $white;
+  }
+
+  &__field {
+    width: 100%;
+    line-height: 1.9;
+    padding-left: 40px;
+    border: 1px solid rgba(60, 60, 60, 0.26);
+    border-radius: 4px;
+  }
+  &__field--dark {
+    background-color: $dark-mode-elements;
+    color: $white;
+  }
+
+  &__field--dark::placeholder {
+    color: $white;
+  }
+
+  &__field:focus {
+    outline: none;
+  }
+}
+.search-icon {
+  width: 20px;
+  height: 20px;
+  stroke: rgba(60, 60, 60, 0.66);
+}
+
+.close-icon {
+  width: 20px;
+  height: 20px;
+  stroke: rgba(60, 60, 60, 0.66);
+}
