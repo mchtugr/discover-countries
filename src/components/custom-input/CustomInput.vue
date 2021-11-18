@@ -16,6 +16,7 @@
     <div
       class="custom-input__close-icon"
       :class="{ 'custom-input__close-icon--dark': isDark }"
+      @click="clearSearch"
     >
       <close-icon />
     </div>
@@ -40,6 +41,11 @@ export default {
     return {
       keyword: null,
     }
+  },
+  methods: {
+    clearSearch() {
+      this.keyword = null
+    },
   },
 }
 </script>
