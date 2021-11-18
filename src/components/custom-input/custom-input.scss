@@ -4,10 +4,12 @@
   width: 100%;
   position: relative;
   box-sizing: border-box;
+  margin: 0;
 
   &--dark input {
     background-color: $dark-mode-elements;
   }
+
   &__search-icon {
     position: absolute;
     display: flex;
@@ -26,14 +28,17 @@
     justify-content: center;
     z-index: 2;
     bottom: 8px;
-    right: -44px;
+    right: 3px;
+    cursor: pointer;
   }
 
   &__close-icon--dark svg {
+    background-color: $dark-mode-elements;
     stroke: $white;
   }
 
   &__field {
+    box-sizing: border-box;
     width: 100%;
     line-height: 1.9;
     padding-left: 40px;
