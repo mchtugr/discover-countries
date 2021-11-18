@@ -1,0 +1,33 @@
+@import './src/assets/scss/variables';
+
+.select-dropdown--dark .vs {
+  &__dropdown-toggle {
+    background-color: $dark-mode-elements;
+    color: $white;
+  }
+
+  &__search {
+    color: $white;
+  }
+
+  &__selected {
+    color: $white;
+  }
+
+  &__open-indicator {
+    fill: $white;
+  }
+
+  &__dropdown-menu {
+    background-color: $dark-mode-elements;
+  }
+
+  &__dropdown-option {
+    background-color: $dark-mode-elements;
+    color: $white;
+  }
+
+  &__dropdown-option--highlight {
+    background-color: $dark-mode-background;
+  }
+}
