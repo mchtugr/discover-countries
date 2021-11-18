@@ -1,0 +1,22 @@
+@import './src/assets/scss/variables';
+
+.country-card {
+  background-color: $white;
+  border-radius: 10px;
+  overflow: hidden;
+
+  &--dark {
+    background-color: $dark-mode-elements;
+  }
+  &__imgbox {
+    width: 100%;
+  }
+
+  &__img {
+    width: 100%;
+  }
+
+  &__body {
+    padding: 20px;
+  }
+}
