@@ -5,9 +5,11 @@
   display: flex;
   justify-content: space-between;
   border-bottom: 1px solid #ebebeb;
+  background-color: $white;
   //   dark-theme
   &--dark {
     border-bottom: 1px solid $dark-mode-elements;
+    background-color: $dark-mode-background;
   }
 
   //   logo

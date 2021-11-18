@@ -18,7 +18,7 @@ input {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   min-height: 100vh;
-  background-color: $white;
+  background-color: $light-mode-background;
 
   &--dark {
     background-color: $dark-mode-background;
