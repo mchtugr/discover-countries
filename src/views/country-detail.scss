@@ -1,0 +1,38 @@
+@import './src/assets/scss/variables';
+
+.country-detail {
+  margin: 50px;
+  &__btn {
+    display: flex;
+    align-items: center;
+    border: none;
+    padding: 7px 15px;
+    border-radius: 3px;
+    cursor: pointer;
+    box-shadow: $box-shadow;
+    background-color: $white;
+    margin: 50px 0;
+  }
+
+  &__btn:hover {
+    background-color: $light-mode-input;
+  }
+
+  &__btn--dark {
+    background-color: $dark-mode-elements;
+    color: $white;
+  }
+
+  &__btn--dark:hover {
+    background-color: $dark-mode-background;
+  }
+
+  &__btn-text {
+    margin-left: 5px;
+  }
+}
+
+.back-icon {
+  width: $detail-page-font-size;
+  height: $detail-page-font-size;
+}

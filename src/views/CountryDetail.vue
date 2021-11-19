@@ -1,11 +1,27 @@
 <template>
-  <div>Country Detail</div>
+  <div class="country-detail">
+    <button
+      class="country-detail__btn"
+      :class="{ 'country-detail__btn--dark': isDark }"
+    >
+      <back-icon />
+      <span class="country-detail__btn-text">Go Back</span>
+    </button>
+    <country-detail-card />
+  </div>
 </template>
 
 <script>
+import { mapState } from 'vuex'
+import CountryDetailCard from '../components/country-detail-card/CountryDetailCard.vue'
+import BackIcon from '../components/icons/BackIcon.vue'
 export default {
+  components: { BackIcon, CountryDetailCard },
   name: 'CountryDetail',
+  computed: {
+    ...mapState(['isDark']),
+  },
 }
 </script>
 
-<style lang="scss"></style>
+<style lang="scss" src="./country-detail.scss"></style>
