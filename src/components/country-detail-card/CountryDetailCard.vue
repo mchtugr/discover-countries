@@ -4,43 +4,46 @@
       <img src="https://flagcdn.com/ar.svg" alt="" class="detail-card__img" />
     </div>
     <div class="detail-card__body">
-      <h2 class="detail-card__title">Argentina</h2>
-      <div class="detail-card__grid-container">
+      <div class="detail-card__title">Argentina</div>
+      <div
+        class="detail-card__grid-container"
+        :class="{ 'detail-card__grid-container--dark': isDark }"
+      >
         <div class="detail-card__left-grid">
-          <p>
+          <li class="detail-card__list-item">
             <span class="boldish">Native Name:</span>
             <span> {{ 'Argentina' }}</span>
-          </p>
-          <p>
+          </li>
+          <li class="detail-card__list-item">
             <span class="boldish">Population:</span>
             <span> {{ 123123123 }}</span>
-          </p>
-          <p>
+          </li>
+          <li class="detail-card__list-item">
             <span class="boldish">Region:</span>
             <span> {{ 'Americas' }}</span>
-          </p>
-          <p>
+          </li>
+          <li class="detail-card__list-item">
             <span class="boldish">Sub Region:</span>
             <span> {{ 'South Americas' }}</span>
-          </p>
-          <p>
+          </li>
+          <li class="detail-card__list-item">
             <span class="boldish">Capital:</span>
             <span> {{ 'Buenos Aires' }}</span>
-          </p>
+          </li>
         </div>
         <div class="detail-card__right-grid">
-          <p>
+          <li class="detail-card__list-item">
             <span class="boldish">Top Level Domain:</span>
             <span> {{ 'ar' }} </span>
-          </p>
-          <p>
+          </li>
+          <li class="detail-card__list-item">
             <span class="boldish">Currencies:</span>
             <span> {{ 'Peso' }}</span>
-          </p>
-          <p>
+          </li>
+          <li class="detail-card__list-item">
             <span class="boldish">Languages:</span>
-            <span> {{ 'Spanish' }}</span>
-          </p>
+            <span> {{ 'Spanish, French, German' }}</span>
+          </li>
         </div>
       </div>
       <div class="detail-card__footer">
@@ -56,8 +59,12 @@
 </template>
 
 <script>
+import { mapState } from 'vuex'
 export default {
   name: 'CountryDetailCard',
+  computed: {
+    ...mapState(['isDark']),
+  },
 }
 </script>
 

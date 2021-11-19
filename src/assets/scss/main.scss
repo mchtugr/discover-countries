@@ -19,6 +19,7 @@ input {
   -moz-osx-font-smoothing: grayscale;
   min-height: 100vh;
   background-color: $light-mode-background;
+  color: $light-mode-text;
 
   &--dark {
     background-color: $dark-mode-background;
