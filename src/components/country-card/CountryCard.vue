@@ -1,17 +1,22 @@
 <template>
   <div class="country-card" :class="{ 'country-card--dark': isDark }">
     <div class="country-card__imgbox">
-      <img
-        src="https://flagcdn.com/ar.svg"
-        class="country-card__img"
-        alt="flag"
-      />
+      <img :src="countryData.flag" class="country-card__img" alt="flag" />
     </div>
     <div class="country-card__body">
       <h3 class="country-card__title">{{ countryData.name }}</h3>
-      <p>Population: {{ countryData.population }}</p>
-      <p>Region: {{ countryData.region }}</p>
-      <p>Capital: {{ countryData.capital }}</p>
+      <li class="country-card__list-item">
+        <span class="boldish">Population: </span>
+        <span>{{ countryData.population }}</span>
+      </li>
+      <li class="country-card__list-item">
+        <span class="boldish">Region: </span>
+        <span>{{ countryData.region }}</span>
+      </li>
+      <li class="country-card__list-item">
+        <span class="boldish">Capital: </span>
+        <span>{{ countryData.capital }}</span>
+      </li>
     </div>
   </div>
 </template>

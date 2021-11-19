@@ -3,14 +3,9 @@
     <filter-section />
     <grid-container>
       <country-card
-        v-for="i in 15"
+        v-for="(country, i) in countries"
         :key="i"
-        :countryData="{
-          name: 'Argentina',
-          population: 123123123,
-          region: 'Americas',
-          capital: 'Buenos Aires',
-        }"
+        :countryData="country"
       />
     </grid-container>
   </div>
@@ -20,9 +15,19 @@
 import CountryCard from '../components/country-card/CountryCard.vue'
 import FilterSection from '../components/filter-section/FilterSection.vue'
 import GridContainer from '../components/grid-container/GridContainer.vue'
+import { mapActions, mapState } from 'vuex'
 export default {
   name: 'Home',
   components: { FilterSection, GridContainer, CountryCard },
+  computed: {
+    ...mapState(['countries']),
+  },
+  methods: {
+    ...mapActions(['getAllCountries']),
+  },
+  mounted() {
+    this.getAllCountries()
+  },
 }
 </script>
 
