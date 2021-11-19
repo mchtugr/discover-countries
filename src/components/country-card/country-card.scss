@@ -5,6 +5,7 @@
   border-radius: 10px;
   overflow: hidden;
   box-shadow: $box-shadow;
+  cursor: pointer;
 
   &--dark {
     background-color: $dark-mode-elements;

@@ -1,5 +1,9 @@
 <template>
-  <div class="country-card" :class="{ 'country-card--dark': isDark }">
+  <div
+    class="country-card"
+    :class="{ 'country-card--dark': isDark }"
+    @click="goCountryDetailPage"
+  >
     <div class="country-card__imgbox">
       <img :src="countryData.flag" class="country-card__img" alt="flag" />
     </div>
@@ -30,6 +34,11 @@ export default {
   },
   computed: {
     ...mapState(['isDark']),
+  },
+  methods: {
+    goCountryDetailPage() {
+      this.$router.push({ path: `/${this.countryData.name}` })
+    },
   },
 }
 </script>
