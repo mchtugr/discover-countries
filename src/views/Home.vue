@@ -3,7 +3,7 @@
     <filter-section />
     <grid-container>
       <country-card
-        v-for="(country, i) in countries"
+        v-for="(country, i) in filteredCountries"
         :key="i"
         :countryData="country"
       />
@@ -19,8 +19,18 @@ import { mapActions, mapState } from 'vuex'
 export default {
   name: 'Home',
   components: { FilterSection, GridContainer, CountryCard },
+
   computed: {
-    ...mapState(['countries']),
+    ...mapState(['countries', 'region']),
+    filteredCountries() {
+      if (this.region !== 'All') {
+        return this.countries.filter(
+          (country) => country.region === this.region
+        )
+      } else {
+        return this.countries
+      }
+    },
   },
   methods: {
     ...mapActions(['getAllCountries']),

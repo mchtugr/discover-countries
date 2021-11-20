@@ -6,7 +6,7 @@
     <div class="filters-container__dropdown">
       <vue-select
         placeholder="Filter by Region"
-        :options="['Asia', 'Africa', 'Europe', 'America', 'Oceania']"
+        :options="['All', 'Asia', 'Africa', 'Europe', 'Americas', 'Oceania']"
       />
     </div>
   </div>
