@@ -8,6 +8,7 @@ export default new Vuex.Store({
   state: {
     isDark: true,
     countries: [],
+    region: null,
   },
   mutations: {
     SWITCH_THEME(state) {
@@ -18,6 +19,9 @@ export default new Vuex.Store({
     },
     SEARCH_COUNTRIES(state, payload) {
       state.countries = payload
+    },
+    FILTER_REGION(state, payload) {
+      state.region = payload
     },
   },
   actions: {
@@ -47,6 +51,9 @@ export default new Vuex.Store({
         .catch((error) => {
           console.log(error.message)
         })
+    },
+    filterRegion(context, region) {
+      context.commit('FILTER_REGION', region)
     },
   },
   modules: {},
