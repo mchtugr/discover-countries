@@ -8,7 +8,7 @@ export default new Vuex.Store({
   state: {
     isDark: true,
     countries: [],
-    region: null,
+    region: 'All',
   },
   mutations: {
     SWITCH_THEME(state) {
