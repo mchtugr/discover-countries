@@ -16,6 +16,9 @@ export default new Vuex.Store({
     GET_ALL_COUNTRIES(state, payload) {
       state.countries = payload
     },
+    SEARCH_COUNTRIES(state, payload) {
+      state.countries = payload
+    },
   },
   actions: {
     switchTheme({ commit }) {
@@ -28,6 +31,22 @@ export default new Vuex.Store({
       } catch (error) {
         console.log(error.message)
       }
+    },
+
+    async searchCountries(context, country) {
+      axios
+        .get(`https://restcountries.com/v2/name/${country}`)
+        .then((res) => {
+          //if no country available, api still returns 200,
+          if (res.data.status === 404) {
+            context.commit('SEARCH_COUNTRIES', [])
+          } else {
+            context.commit('SEARCH_COUNTRIES', res.data)
+          }
+        })
+        .catch((error) => {
+          console.log(error.message)
+        })
     },
   },
   modules: {},
