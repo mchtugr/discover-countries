@@ -12,6 +12,7 @@
       v-model="keyword"
       :placeholder="placeholder"
       :type="type"
+      :value="keyword"
     />
     <div
       class="custom-input__close-icon"
@@ -24,7 +25,7 @@
 </template>
 
 <script>
-import { mapState } from 'vuex'
+import { mapState, mapActions } from 'vuex'
 import SearchIcon from '../icons/SearchIcon.vue'
 import CloseIcon from '../icons/CloseIcon.vue'
 export default {
@@ -40,11 +41,30 @@ export default {
   data() {
     return {
       keyword: null,
+      timeoutQuery: null,
     }
   },
   methods: {
+    ...mapActions(['searchCountries', 'getAllCountries']),
     clearSearch() {
       this.keyword = null
+    },
+    // demo(value) {
+    //   console.log(value)
+    // },
+  },
+  // handle search when user stops typing
+  watch: {
+    keyword(query) {
+      if (this.timeoutQuery) {
+        clearTimeout(this.timeoutQuery)
+      }
+      if (query) {
+        this.timeoutQuery = setTimeout(() => this.searchCountries(query), 300)
+      } else {
+        // if query is empty get all contries
+        this.timeoutQuery = setTimeout(() => this.getAllCountries())
+      }
     },
   },
 }
