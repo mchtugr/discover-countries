@@ -39,6 +39,11 @@
     color: $light-mode-input;
   }
 
+  &__footer {
+    display: grid;
+    grid-template-columns: auto auto;
+  }
+
   &__border-countries {
     margin-left: 15px;
     display: inline;
