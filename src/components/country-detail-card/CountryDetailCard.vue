@@ -66,11 +66,14 @@
       </div>
     </div>
   </div>
+  <loading v-else />
 </template>
 
 <script>
 import { mapState } from 'vuex'
+import Loading from '../loading/Loading.vue'
 export default {
+  components: { Loading },
   name: 'CountryDetailCard',
   props: {
     countryData: Object,
