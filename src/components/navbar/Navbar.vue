@@ -30,6 +30,11 @@ export default {
   methods: {
     ...mapActions(['switchTheme']),
     changeTheme() {
+      if (this.isDark) {
+        document.body.style.backgroundColor = 'hsl(0, 0%, 100%)'
+      } else {
+        document.body.style.backgroundColor = 'hsl(207, 26%, 17%)'
+      }
       this.switchTheme()
     },
   },
