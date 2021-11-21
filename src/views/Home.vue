@@ -25,17 +25,24 @@ export default {
   computed: {
     ...mapState(['countries', 'region']),
     filteredCountries() {
-      if (this.region !== 'All') {
+      if (this.region === 'All' || this.region === null) {
+        return this.countries
+      } else {
         return this.countries.filter(
           (country) => country.region === this.region
         )
-      } else {
-        return this.countries
       }
     },
   },
   methods: {
-    ...mapActions(['getAllCountries']),
+    ...mapActions(['getAllCountries', 'filterRegion']),
+  },
+  watch: {
+    region(val) {
+      if (val === null) {
+        this.filterRegion(null)
+      }
+    },
   },
   mounted() {
     this.getAllCountries()
