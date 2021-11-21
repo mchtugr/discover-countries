@@ -92,7 +92,7 @@ export default {
     // map border country codes as full name
     borderCountries() {
       const neighbors = []
-      this.countryData.borders.forEach((countryCode) => {
+      this.countryData.borders?.forEach((countryCode) => {
         const newNeighbor = this.countries.find(
           (country) => country.alpha3Code === countryCode
         )
@@ -100,6 +100,9 @@ export default {
       })
       return neighbors
     },
+  },
+  mounted() {
+    console.log(this.countryData)
   },
 }
 </script>
