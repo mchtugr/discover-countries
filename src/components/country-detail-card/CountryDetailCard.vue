@@ -101,9 +101,6 @@ export default {
       return neighbors
     },
   },
-  mounted() {
-    console.log(this.countryData)
-  },
 }
 </script>
 

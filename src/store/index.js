@@ -6,7 +6,7 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
-    isDark: true,
+    isDark: false,
     countries: [],
     region: 'All',
   },

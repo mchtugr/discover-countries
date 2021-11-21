@@ -3,6 +3,7 @@
     <button
       class="country-detail__btn"
       :class="{ 'country-detail__btn--dark': isDark }"
+      @click="goBack"
     >
       <back-icon />
       <span class="country-detail__btn-text">Go Back</span>
@@ -29,6 +30,9 @@ export default {
   },
   methods: {
     ...mapActions(['getAllCountries']),
+    goBack() {
+      this.$router.push({ path: '/' })
+    },
   },
   mounted() {
     this.getAllCountries()
