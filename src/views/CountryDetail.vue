@@ -7,19 +7,31 @@
       <back-icon />
       <span class="country-detail__btn-text">Go Back</span>
     </button>
-    <country-detail-card />
+    <country-detail-card :countryData="countryData" />
   </div>
 </template>
 
 <script>
-import { mapState } from 'vuex'
+import { mapState, mapActions } from 'vuex'
 import CountryDetailCard from '../components/country-detail-card/CountryDetailCard.vue'
 import BackIcon from '../components/icons/BackIcon.vue'
 export default {
   components: { BackIcon, CountryDetailCard },
   name: 'CountryDetail',
+
   computed: {
-    ...mapState(['isDark']),
+    ...mapState(['isDark', 'countries']),
+    countryData() {
+      return this.countries.find(
+        (country) => country.name === this.$route.params.country
+      )
+    },
+  },
+  methods: {
+    ...mapActions(['getAllCountries']),
+  },
+  mounted() {
+    this.getAllCountries()
   },
 }
 </script>
