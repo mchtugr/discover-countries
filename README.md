@@ -1,24 +1,56 @@
-# countries
+# Discover Countries
 
-## Project setup
-```
-npm install
+This project is coded for Frontend Mentor REST Countries API with color theme switcher challenge.
+REST Countries V2 API was used to retrieve country datas.
+
+## Preview Link
+
+You can preview the app [here](https://discover-countries-10xtlieac-mchtugr.vercel.app/).
+
+## Screenshots
+
+![Discover Countries App](ss/discover-countries.gif)
+
+## Run locally
+
+Clone the project
+
+```bash
+  git clone https://github.com/mchtugr/discover-countries.git
 ```
 
-### Compiles and hot-reloads for development
-```
-npm run serve
+Go to project directory
+
+```bash
+  cd discover-countries
 ```
 
-### Compiles and minifies for production
-```
-npm run build
+Install dependencies
+
+```bash
+  npm install
 ```
 
-### Lints and fixes files
-```
-npm run lint
+Run the app
+
+```bash
+  npm run serve
 ```
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+## Built with
+
+- VueJs
+- Vuex
+- Vue Select
+- Vue Router
+- Axios
+- SCSS
+
+## Contributing
+
+Pull requests are welcome.
+For major changes, please open an issue first to discuss what you would like to change.
+
+## License
+
+[MIT](https://choosealicense.com/licenses/mit/)
