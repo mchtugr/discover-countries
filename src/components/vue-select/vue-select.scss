@@ -6,14 +6,12 @@
     color: $white;
   }
 
-  &__search {
-    color: $white;
-  }
-
+  &__search,
   &__selected {
     color: $white;
   }
 
+  &__clear svg,
   &__open-indicator {
     fill: $white;
   }
