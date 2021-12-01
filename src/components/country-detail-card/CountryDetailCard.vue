@@ -20,7 +20,7 @@
           </li>
           <li class="detail-card__list-item">
             <span class="boldish">Population:</span>
-            <span> {{ countryData.population }}</span>
+            <span> {{ countryData.population | showDecimalPoint }}</span>
           </li>
           <li class="detail-card__list-item">
             <span class="boldish">Region:</span>
@@ -72,12 +72,14 @@
 <script>
 import { mapState } from 'vuex'
 import Loading from '../loading/Loading.vue'
+import filters from '../../filters/index'
 export default {
   components: { Loading },
   name: 'CountryDetailCard',
   props: {
     countryData: Object,
   },
+  mixins: [filters],
   computed: {
     ...mapState(['isDark', 'countries']),
     // returns currencies arr as comma seperated string
